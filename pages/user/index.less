@@ -1,0 +1,204 @@
+page {
+  background-color: #edece8;
+}
+
+.user_info_wrap {
+  height: 45vh;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--themColor);
+  border-top: 1rpx solid rgba(0, 0, 0, .5);
+
+  .user_img_wrap {
+    height: 100%;
+    position: relative;
+
+    .user_bg {
+      position: absolute;
+      left: -20rpx;
+      height: 50vh;
+      width: 110vw;
+      // 高斯模糊
+      filter: blur(10rpx);
+    }
+
+    .user_info {
+      position: absolute;
+      left: 50%;
+      top: 18%;
+      transform: translateX(-50%);
+      text-align: center;
+
+      .user_icon {
+        height: 150rpx;
+        width: 150rpx;
+        border-radius: 50%;
+      }
+
+      .user_name {
+        color: #fff;
+        font-size: 32rpx;
+        font-weight: bold;
+        margin-top: 10rpx;
+      }
+    }
+  }
+
+  .user_btn {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 40%;
+    border: 1rpx solid #fff;
+    color: #fff;
+    font-size: 38rpx;
+    padding: 30rpx;
+    border-radius: 10rpx;
+  }
+}
+
+// 主体内容样式
+.user_content {
+  position: relative;
+  
+  .user_main {
+    color: #666;
+    position: absolute;
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -40rpx;
+    padding-bottom: 40rpx;
+
+    // 历史足迹
+    .history_wrap {
+      background-color: #fff;
+      display: flex;
+      border-radius: 4rpx;
+      box-shadow: 1rpx 1rpx 5rpx rgba(0, 0, 0, .2);
+      navigator {
+        flex: 1;
+        text-align: center;
+        padding: 10rpx 0;
+
+        .his_num {
+          color: var(--themColor);
+        }
+
+        .his_name {}
+      }
+    }
+
+    // 我的订单
+    .orders_wrap {
+      background-color: #fff;
+      margin-top: 30rpx;
+      border-radius: 4rpx;
+      box-shadow: 1rpx 1rpx 5rpx rgba(0, 0, 0, .2);
+      .orders_title {
+        padding: 20rpx;
+        border-bottom: 1rpx solid #ccc;
+      }
+      .order_content {
+        display: flex;
+        navigator {
+          padding: 15rpx 0;
+          flex: 1;
+          text-align: center;
+          .iconfont {
+            color: var(--themColor);
+            font-size: 40rpx;
+          }
+
+          .order_name {}
+        }
+      }
+    }
+    // 收货地址
+    .address_wrap{
+      margin-top: 30rpx;
+      background-color: #fff;
+      padding: 20rpx;
+      box-shadow: 1rpx 1rpx 5rpx rgba(0, 0, 0, .2);
+      border-radius: 4rpx;
+    }
+    // 应用信息相关
+    .app_info_wrap{
+      margin-top: 30rpx;
+      background-color: #fff;
+      box-shadow: 1rpx 1rpx 5rpx rgba(0, 0, 0, .2);
+      border-radius: 4rpx;
+      .app_info_item{
+        padding: 20rpx;
+        border-bottom: 1rpx solid #ccc;
+        &:first-child{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        &:last-child{
+          border: 0;
+        }
+      }
+    }
+  }
+  // 推荐
+  .recommend_wrap{
+    position: relative;
+    border-radius: 4rpx;
+    margin-top: 30rpx;
+    background-color: #fff;
+    padding: 20rpx;
+    box-shadow: 1rpx 1rpx 5rpx rgba(0, 0, 0, .2);
+    button{
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 78rpx;
+      width: 675rpx;
+      padding: 0;
+      opacity: 0;
+    }
+  }
+}
+// 关于我们弹出层样式
+.user_my_wrap{
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  z-index: 2;
+  bottom: 0;
+  border-radius: 10rpx;
+  width: 90vw;
+  .my_title_wrap{
+    border-bottom: 1rpx solid #ccc;
+    padding: 8rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    image{
+      width: 120rpx;
+      height: 120rpx;
+      border-radius: 50%;
+    }
+    .my_company_name{}
+  }
+  .my_company_wrap{
+    .my_company_info{
+      padding: 20rpx;
+      border-bottom: 1rpx solid #ccc;
+    }
+  }
+}
+.user_mask{
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  opacity: .8;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  bottom: 0;
+}

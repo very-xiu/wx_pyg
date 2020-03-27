@@ -1,0 +1,93 @@
+<!-- 顶部个人信息展览 -->
+<view class="user_info_wrap">
+  <view class="user_img_wrap" wx:if="{{userinfo.bigImgUrl}}">
+    <image class="user_bg" src="{{userinfo.bigImgUrl}}"></image>
+    <view class="user_info">
+      <image class="user_icon" src="{{userinfo.avatarUrl}}"></image>
+      <view class="user_name">{{userinfo.nickName}}</view>
+      <view class="user_name">{{userinfo.country}} {{userinfo.city}}</view>
+    </view>
+  </view>
+  <view class="user_btn" wx:else>
+    <navigator url="/pages/login/index">登录</navigator>
+  </view>
+</view>
+
+<!-- 主体内容 -->
+<view class="user_content">
+  <view class="user_main">
+    <!-- 历史足迹 -->
+    <view class="history_wrap">
+      <navigator>
+        <view class="his_num">0</view>
+        <view class="his_name">收藏的店铺</view>
+      </navigator>
+      <navigator url="/pages/collect/index">
+        <view class="his_num">{{collectNums}}</view>
+        <view class="his_name">收藏的商品</view>
+      </navigator>
+      <navigator>
+        <view class="his_num">0</view>
+        <view class="his_name">关注的商品</view>
+      </navigator>
+      <navigator>
+        <view class="his_num">0</view>
+        <view class="his_name">我的足迹</view>
+      </navigator>
+    </view>
+    <!-- 我的订单 -->
+    <view class="orders_wrap">
+      <view class="orders_title">我的订单</view>
+      <view class="order_content">
+        <navigator url="/pages/order/index?type=1">
+          <view class="iconfont icondingdan"></view>
+          <view class="order_name">全部订单</view>
+        </navigator>
+        <navigator url="/pages/order/index?type=2">
+          <view class="iconfont iconfukuantongzhi"></view>
+          <view class="order_name">待付款</view>
+        </navigator>
+        <navigator url="/pages/order/index?type=3">
+          <view class="iconfont iconche"></view>
+          <view class="order_name">待收货</view>
+        </navigator>
+        <navigator url="/pages/order/index?type=4">
+          <view class="iconfont iconqian"></view>
+          <view class="order_name">退款/退货</view>
+        </navigator>
+      </view>
+    </view>
+    <!-- 收货地址 -->
+    <navigator url="/pages/addressList/index" class="address_wrap">收货地址管理</navigator>
+    <!-- 应用信息相关 -->
+    <view class="app_info_wrap">
+      <view class="app_info_item" bindtap='calling'>
+        <text>联系客服</text>
+        <text>400-618-4000</text>
+      </view>
+      <navigator url="/pages/feedback/index" class="app_info_item">意见反馈</navigator>
+      <view class="app_info_item" bindtap="handleShowMy">关于我们</view>
+    </view>
+    <!-- 推荐 -->
+    <view class="recommend_wrap" bindtap="handleShareApp">
+      应用推荐给其他人
+      <button open-type="share"></button>
+    </view>
+  </view>
+</view>
+<!-- 关于我们弹出层 -->
+<block wx:if="{{isShow?true:false}}">
+  <view class="user_my_wrap" catchtouchmove='preventD'>
+    <view class="my_title_wrap">
+      <image src="http://img2.imgtn.bdimg.com/it/u=3835734796,1631195054&fm=26&gp=0.jpg"></image>
+      <view class="my_company_name">某某科技公司</view>
+    </view>
+    <view class="my_company_wrap">
+      <view class="my_company_info">工作日：周一 至 周五</view>
+      <view class="my_company_info">工作时间：08:30 至 17:30</view>
+      <view class="my_company_info">客服人数：20人</view>
+      <view class="my_company_info">公司地址：广东省珠海市金鼎某某软件园</view>
+    </view>
+  </view>
+  <view class="user_mask" catchtouchmove='preventD' bindtap="handleHide"></view>
+</block>

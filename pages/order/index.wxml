@@ -1,0 +1,83 @@
+<Tabs tabs="{{tabs}}" bindtabsItemChange="handleTabsItemChange">
+  <!-- 全部 -->
+  <block wx:if="{{tabs[0].isActive}}">
+    <view class="order_main">
+      <view class="order_item" wx:for="{{orderArr}}" wx:key="order_id">
+        <view class="order_num_row">
+          <view class="order_num_text">订单编号:</view>
+          <view class="order_num_value">{{item.order_number}}</view>
+        </view>
+        <view class="order_price_row">
+          <view class="order_price_text">订单价格:</view>
+          <view class="order_price_value">￥{{item.order_price}}</view>
+        </view>
+        <view class="order_time_row">
+          <view class="order_time_text">下单时间:</view>
+          <view class="order_time_value">{{item.time}}</view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <!-- 待付款 -->
+  <block wx:if="{{tabs[1].isActive}}">
+    <view class="order_main">
+      <view class="order_item" wx:for="{{orderArr}}" wx:key="order_id">
+        <view class="order_num_row">
+          <view class="order_num_text">订单编号:</view>
+          <view class="order_num_value">{{item.order_number}}</view>
+        </view>
+        <view class="order_price_row">
+          <view class="order_price_text">订单价格:</view>
+          <view class="order_price_value">￥{{item.order_price}}</view>
+        </view>
+        <view class="order_time_row">
+          <view class="order_time_text">下单时间:</view>
+          <view class="order_time_value">{{item.time}}</view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <!-- 待发货 -->
+  <block wx:if="{{tabs[2].isActive}}">
+    <view class="order_main">
+      <view class="order_item" wx:for="{{orderArr}}" wx:key="order_id">
+        <view class="order_num_row">
+          <view class="order_num_text">订单编号:</view>
+          <view class="order_num_value">{{item.order_number}}</view>
+        </view>
+        <view class="order_price_row">
+          <view class="order_price_text">订单价格:</view>
+          <view class="order_price_value">￥{{item.order_price}}</view>
+        </view>
+        <view class="order_time_row">
+          <view class="order_time_text">下单时间:</view>
+          <view class="order_time_value">{{item.time}}</view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <!-- 退款/退货 -->
+  <block wx:if="{{tabs[3].isActive}}">
+    <view class="order_main">
+      <block wx:if="{{orderArr.length?true:false}}">
+        <view class="order_item" wx:for="{{orderArr}}" wx:key="order_id">
+          <view class="order_num_row">
+            <view class="order_num_text">订单编号:</view>
+            <view class="order_num_value">{{item.order_number}}</view>
+          </view>
+          <view class="order_price_row">
+            <view class="order_price_text">订单价格:</view>
+            <view class="order_price_value">￥{{item.order_price}}</view>
+          </view>
+          <view class="order_time_row">
+            <view class="order_time_text">下单时间:</view>
+            <view class="order_time_value">{{item.time}}</view>
+          </view>
+        </view>
+      </block>
+      <block wx:else>
+        <image src="https://i.loli.net/2020/03/25/JcupbEr91H7WtgF.jpg" mode="widthFix"/>
+      </block>
+    </view>
+  </block>
+</Tabs>

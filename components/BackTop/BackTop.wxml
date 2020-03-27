@@ -1,0 +1,7 @@
+<view wx:if="{{backTopValue}}" 
+  class="back-top"
+  bindtap="handleBackTop"
+style="bottom:{{backTopPosition}}rpx;"
+>
+  <text>顶部</text>
+</view>

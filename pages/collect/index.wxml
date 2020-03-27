@@ -1,0 +1,60 @@
+<Tabs tabs="{{tabs}}" bindtabsItemChange="handleTabsItemChange">
+  <!-- 小标题 -->
+  <view class="collect_main_nav">
+    <view class="collect_title">
+      <text class="collect_tips active">全部</text>
+      <text class="collect_tips">正在热卖</text>
+      <text class="collect_tips">即将上线</text>
+    </view>
+  </view>
+  <!-- 商品收藏 -->
+  <block wx:if="{{tabs[0].isActive}}">
+    <view class="collect_main">
+      <navigator class="collect_item" wx:for="{{collect}}" wx:key="goods_id" url="/pages/goods_detail/index?goods_id={{item.goods_id}}">
+        <!-- 左侧图片容器 -->
+        <view class="collect_img_wrap">
+          <image
+            src="{{item.goods_small_logo?item.goods_small_logo:'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'}}"
+            mode="widthFix" />
+
+        </view>
+        <!-- 右侧商品容器 -->
+        <view class="collect_info_wrap">
+          <view class="collect_name">{{item.goods_name}}</view>
+          <view class="collect_price">￥{{item.goods_price}}</view>
+        </view>
+      </navigator>
+    </view>
+  </block>
+  <!-- 品牌收藏 -->
+  <block wx:if="{{tabs[1].isActive}}">
+    <view class="collect_main">
+      <navigator class="collect_item" wx:for="{{collect}}" wx:key="goods_id" url="/pages/goods_detail/index?goods_id={{item.goods_id}}">
+        <!-- 左侧图片容器 -->
+        <view class="collect_img_wrap">
+          <image
+            src="{{item.goods_small_logo?item.goods_small_logo:'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'}}"
+            mode="widthFix" />
+
+        </view>
+        <!-- 右侧商品容器 -->
+        <view class="collect_info_wrap">
+          <view class="collect_name">{{item.goods_name}}</view>
+          <view class="collect_price">￥{{item.goods_price}}</view>
+        </view>
+      </navigator>
+    </view>
+  </block>
+  <!-- 店铺收藏 -->
+  <block wx:if="{{tabs[2].isActive}}">
+    <view class="collect_main">
+      店铺图片和店铺简介，并且可以跳转到店铺页面
+    </view>
+  </block>
+  <!-- 浏览足迹 -->
+  <block wx:if="{{tabs[3].isActive}}">
+    <view class="collect_main">
+      根据1天24小时保存浏览足迹，保存到缓存中。browse
+    </view>
+  </block>
+</Tabs>

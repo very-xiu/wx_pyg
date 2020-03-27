@@ -1,0 +1,46 @@
+page{  
+  display: flex;  
+  flex-direction: column;  
+  height: 100%;  
+}  
+.product-name-wrap{
+  margin: 0 20rpx;
+  font-size: 28rpx;
+  color: #404040;
+}
+.ui-list-item-info{
+  margin: 20rpx 0;
+}
+.ui-list-item-address{
+  color: #585c64;
+}
+.ui-list-item-time{
+  margin: 10rpx 0;
+}
+.ui-list-item-del{
+  position: absolute;
+  right: 20rpx;
+  color: #585c64;
+}
+/* 分割线 */
+.separate {
+  margin: 10rpx 0;
+  height: 2rpx;
+  background-color: #f2f2f2;
+}
+.add-address{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 60rpx;
+  width: 300rpx;
+  height: 70rpx;
+  border: 2rpx #000 solid;
+  text-align: center;
+  color: #666;
+  border-radius: 5rpx;
+}
+.iconjia{
+  margin-right: 15rpx;
+}

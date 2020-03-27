@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "BackTop": "../../components/BackTop/BackTop"
+  },
+  "navigationBarTitleText": "商品详情页面"
+}
