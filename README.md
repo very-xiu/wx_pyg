@@ -1,3 +1,7 @@
+# 微信小程序GIF预览图
+![images](https://github.com/very-xiu/wx_pyg/blob/master/icons/home.gif?raw=true) ![images](https://github.com/very-xiu/wx_pyg/blob/master/icons/category.gif?raw=true)
+![images](https://github.com/very-xiu/wx_pyg/blob/master/icons/cart.gif?raw=true) ![images](https://github.com/very-xiu/wx_pyg/blob/master/icons/user.gif?raw=true)
+
 # 微信小程序——优购商城项目
 
 ### 后台接口
